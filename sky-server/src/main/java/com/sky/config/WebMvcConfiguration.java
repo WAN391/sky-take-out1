@@ -69,6 +69,10 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+
+        //映射静态资源
+        registry.addResourceHandler("/static/**")
+                .addResourceLocations("D:/Document/桌面/2/1、黑马程序员Java项目《苍穹外卖》企业级开发实战/资料/资料/day01/后端初始工程/sky-take-out/sky-server/src/main/resources/upload/");
     }
     /**
      * 扩展Spring MVC框架的消息转换器
