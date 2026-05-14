@@ -41,8 +41,12 @@ public class DishServiceImpl implements DishService {
     public void saveWithFlavor(DishDTO dishDTO) {
 
 
+        String images = dishDTO.getImage();
+        String images1= images.substring(images.lastIndexOf("/")+1);
+        String images2= "D:/Document/桌面/2/1、黑马程序员Java项目《苍穹外卖》企业级开发实战/资料/资料/day01/后端初始工程/sky-take-out/sky-server/src/main/resources/upload/"+images1;
+//        http://localhost:8080/static/9363d52a-addb-4df1-ae99-004058555e2e.jpg
+        dishDTO.setImage(images2);
         Dish dish = new Dish();
-
         BeanUtils.copyProperties(dishDTO, dish);
         //向菜品表插入数据
 
